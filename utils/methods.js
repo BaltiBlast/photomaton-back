@@ -1,4 +1,7 @@
+// NPM import //
 const { exec } = require("child_process");
+
+let photoIndex = 1;
 
 // ------------------------------------------------------------------------------------------
 // get Nikon 5200 busid dynamically and attach it
@@ -34,6 +37,19 @@ function attachNikon() {
   });
 }
 
+// ------------------------------------------------------------------------------------------
+// file name management
+function getFileName() {
+  const now = new Date();
+  const formattedTime = `${now.getHours()}h${now.getMinutes().toString().padStart(2, "0")}`;
+
+  const fileName = `photo${photoIndex}_${formattedTime}.nef`;
+  photoIndex++;
+
+  return fileName;
+}
+
 module.exports = {
   attachNikon,
+  getFileName,
 };

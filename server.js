@@ -1,12 +1,15 @@
 // NPM import //
 const express = require("express");
+const cors = require("cors");
 
 // local import //
 const { attachNikon } = require("./utils/methods");
 const router = require("./router");
 
-const app = express();
 const PORT = 3000;
+
+const app = express();
+app.use(cors());
 
 attachNikon();
 
