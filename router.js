@@ -18,7 +18,7 @@ router.get("/capture", (req, res) => {
   const fileName = getFileName();
 
   exec(
-    `wsl gphoto2 --capture-image-and-download --filename /mnt/c/Users/fouge/Desktop/${fileName}`,
+    `wsl gphoto2 --capture-image-and-download --filename /mnt/g/Mon\\ Drive/Anniversaire\\ Balti\\ 2025/${fileName}`,
     (error, stdout, stderr) => {
       if (error) {
         console.error(`Erreur : ${error.message}`);
